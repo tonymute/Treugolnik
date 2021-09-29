@@ -12,7 +12,7 @@ Triangle::Triangle(Point _v1, Point _v2, Point _v3, const char* ident) :v1(_v1),
 	objID = new char[strlen(ident) + 1];
 	strcpy(objID, ident);
 	count++;
-	sprintf(buf, "Òðåóãîëüíèê %d", count);
+	sprintf(buf, "Треугольник %d", count);
 	name = new char[strlen(buf) + 1];
 	strcpy(name, buf);
 	a = sqrt((v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y));
@@ -27,7 +27,7 @@ Triangle::Triangle(const char* ident)
 	objID = new char[strlen(ident) + 1];
 	strcpy(objID, ident);
 	count++;
-	sprintf(buf, "Òðåóãîëüíèê %d", count);
+	sprintf(buf, "Треугольник %d", count);
 	name = new char[strlen(buf) + 1];
 	strcpy(name, buf);
 	a = b = c = 0;
@@ -37,9 +37,9 @@ Triangle::Triangle(const char* ident)
 Triangle::Triangle(const Triangle& tria) : v1(tria.v1), v2(tria.v2), v3(tria.v3)
 {
 	cout << "Copy constructor for: " << tria.objID << endl; 
-	objID = new char[strlen(tria.objID) + strlen("(êîïèÿ)") + 1];
+	objID = new char[strlen(tria.objID) + strlen("(копия)") + 1];
 	strcpy(objID, tria.objID);
-	strcat(objID, "(êîïèÿ)");
+	strcat(objID, "(копия)");
 	name = new char[strlen(tria.name) + 1]; strcpy(name, tria.name); a = tria.a; b = tria.b; c = tria.c;
 }
 
